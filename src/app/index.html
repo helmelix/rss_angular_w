@@ -1,0 +1,86 @@
+
+Skip to content
+Personal
+Open source
+Business
+Explore
+Pricing
+Blog
+Support
+This repository
+
+484
+6,674
+
+    3,754
+
+AngularClass/angular2-webpack-starter
+Code
+Issues 141
+Pull requests 22
+Projects 0
+Wiki
+Pulse
+Graphs
+angular2-webpack-starter/src/index.html
+359b437 on 14 Nov 2016
+@gdi2290 gdi2290 refactor(index.html): remove 🆖 from html element
+@gdi2290
+@shlomiassaf
+@mastertinner
+@katallaxie
+@ebeal
+@chuyeow
+48 lines (34 sloc) 1.29 KB
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+
+  <% if (webpackConfig.htmlElements.headTags) { %>
+  <!-- Configured Head Tags  -->
+  <%= webpackConfig.htmlElements.headTags %>
+  <% } %>
+
+  
+
+  <!-- base url -->
+  <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+<!--
+  <script src="node_modules/d3/d3.min.js" charset="utf-8"></script>
+      <link rel="stylesheet" href="node_modules/nvd3/build/nv.d3.min.css"/>
+      <script src="node_modules/nvd3/build/nv.d3.min.js"></script>
+-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <app>
+    Loading...
+  </app>
+
+
+
+  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+  <!-- Webpack Dev Server reload -->
+  <script src="/webpack-dev-server.js"></script>
+  <% } %>
+
+
+</body>
+</html>
+
+    Contact GitHub API Training Shop Blog About
+
+    © 2017 GitHub, Inc. Terms Privacy Security Status Help

@@ -1,0 +1,21 @@
+<div class="col-md-4 space_top">
+  <div *ngIf="selectedChannel.name">
+    <div><h2>{{selectedChannel.name}}</h2></div>
+        <li *ngFor="let news of allNews" (click)="selectNews(news)">
+          {{ news.title}}
+        </li>
+  </div>
+</div>
+<div class="col-md-4 space_top">
+        <div *ngIf="selectedPost.title">
+            <div><p class="lead">{{selectedPost.title}}</p></div>
+            <div [innerHTML]="selectedPost.description"></div>
+            <div><a href="{{selectedPost.link}}">ссылка</a></div>
+            <div style="display: block" *ngIf="selectedPost.description">
+              <nvd3 [options]="nvd3Options" [data]="nvd3Data"></nvd3>
+            </div>
+        </div>
+        <div *ngIf="selectedChannel.id"><button (click)="delete()">delete ch</button></div>
+        <div *ngIf="errorMessage">errorMessage: {{errorMessage}}</div>
+        <div *ngIf="nubberOfNews">nubberOfNews: {{nubberOfNews}}</div>
+</div>
